@@ -4,7 +4,19 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-ACME_VERSION := 12.1
+# Version
+ACME_BRANCH := spring
+ACME_BUILD_TYPE := DEBUG
+ACME_DATE := $(shell date -u +%Y%m%d)
+ACME_DEVICE := $(shell echo "$(TARGET_PRODUCT)" | cut -d '_' -f 2,3)
 
-ADDITIONAL_SYSTEM_PROPERTIES += \
-    ro.build.version.custom=$(ACME_VERSION)
+ifeq ($(IS_RELEASE), true)
+    ACME_BUILD_TYPE := RELEASE
+endif
+
+ACME_VERSION := AcmeUI-$(ACME_BRANCH)-$(ACME_DEVICE)-$(ACME_BUILD_TYPE)-$(ACME_DATE)
+ACME_DISPLAY_VERSION := AcmeUI-$(ACME_BRANCH)-$(ACME_DATE)
+
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.acme.version=$(ACME_VERSION) \
+    ro.acme.build.version=$(ACME_DISPLAY_VERSION)

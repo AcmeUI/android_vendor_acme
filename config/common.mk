@@ -21,3 +21,36 @@ PRODUCT_PRODUCT_PROPERTIES += ro.apex.updatable=false
 # Disable RescueParty due to high risk of data loss
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.sys.disable_rescue=true
+
+# Required packages
+PRODUCT_PACKAGES += \
+    LatinIME \
+    Launcher3QuickStep \
+    ThemePicker
+
+# Filesystems tools
+PRODUCT_PACKAGES += \
+    fsck.ntfs \
+    mke2fs \
+    mkfs.ntfs \
+    mount.ntfs
+
+# Only logging privapp-permissions whitelist
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.control_privapp_permissions=log
+
+# Set GMS client ID base
+ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.com.google.clientidbase=android-google
+else
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.com.google.clientidbase=$(PRODUCT_GMS_CLIENTID_BASE)
+endif
+
+# Override undesired Google defaults
+PRODUCT_PRODUCT_PROPERTIES += \
+    keyguard.no_require_sim=true \
+    ro.setupwizard.enterprise_mode=1 \
+    ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
+    ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html
