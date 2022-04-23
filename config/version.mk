@@ -15,8 +15,7 @@ ifeq ($(IS_RELEASE), true)
 endif
 
 ACME_VERSION := AcmeUI-$(ACME_BRANCH)-$(ACME_DEVICE)-$(ACME_BUILD_TYPE)-$(ACME_DATE)
-ACME_DISPLAY_VERSION := AcmeUI-$(ACME_BRANCH)-$(ACME_DATE)
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.acme.version=$(ACME_VERSION) \
-    ro.acme.build.version=$(ACME_DISPLAY_VERSION)
+    ro.acme.branch=$(shell echo "$(ACME_BRANCH)") \
+    ro.acme.build.type=$(shell echo "$(ACME_BUILD_TYPE)")
