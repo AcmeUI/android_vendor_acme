@@ -25,7 +25,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Required packages
 PRODUCT_PACKAGES += \
     LatinIME \
-    Launcher3QuickStep \
     ThemePicker
 
 # Filesystems tools
