@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+    Copyright (C) 2022 Acme
+
+    SPDX-License-Identifier: Apache-2.0
+
+-->
+<resources>
+    <string name="wallpaper_picker_package" translatable="false">com.android.wallpaper</string>
+</resources>
