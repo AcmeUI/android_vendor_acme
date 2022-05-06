@@ -11,6 +11,9 @@ $(call inherit-product, vendor/acme/overlay/overlay.mk)
 # Acme version
 -include vendor/acme/config/version.mk
 
+# Sounds
+include vendor/acme/config/sounds.mk
+
 # Flatten APEXs for performance
 OVERRIDE_TARGET_FLATTEN_APEX := true
 
