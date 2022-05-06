@@ -11,6 +11,9 @@ $(call inherit-product, vendor/acme/overlay/overlay.mk)
 # Acme version
 -include vendor/acme/config/version.mk
 
+# GMS
+-include vendor/gms/config.mk
+
 # Sounds
 include vendor/acme/config/sounds.mk
 
