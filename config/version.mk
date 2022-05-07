@@ -19,3 +19,14 @@ ACME_VERSION := AcmeUI-$(ACME_BRANCH)-$(ACME_DEVICE)-$(ACME_BUILD_TYPE)-$(ACME_D
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.acme.branch=$(shell echo "$(ACME_BRANCH)") \
     ro.acme.build.type=$(shell echo "$(ACME_BUILD_TYPE)")
+
+ifeq ($(WITH_GMS), true)
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.acme.gms.type=GMS
+else ifeq ($(WITH_GMS_CORE), true)
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.acme.gms.type=GMSCore
+else
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.acme.gms.type=VANILLA
+endif
