@@ -5,7 +5,7 @@
 #
 
 # Version
-ACME_BRANCH := spring
+ACME_BRANCH := taffy
 ACME_BUILD_TYPE := DEBUG
 ACME_DATE := $(shell date -u +%Y%m%d)
 ACME_DEVICE := $(shell echo "$(TARGET_PRODUCT)" | cut -d '_' -f 2,3)
