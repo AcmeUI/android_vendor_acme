@@ -31,7 +31,8 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Required packages
 PRODUCT_PACKAGES += \
     LatinIME \
-    ThemePicker
+    ThemePicker \
+    ThemesStub
 
 # Filesystems tools
 PRODUCT_PACKAGES += \
