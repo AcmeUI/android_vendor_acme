@@ -6,6 +6,3 @@
 
 # Vendor overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/acme/overlay
-
-PRODUCT_PACKAGES += \
-    AcmeThemesStub
