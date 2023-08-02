@@ -70,7 +70,7 @@ else
 SOONG_CONFIG_acmeQcomVars_qcom_display_headers_namespace := $(QCOM_SOONG_NAMESPACE)/display
 endif
 
-PRODUCT_SOONG_NAMESPACES += packages/apps/Bluetooth
+PRODUCT_SOONG_NAMESPACES += packages/modules/Bluetooth
 
 ifneq ($(TARGET_USES_NQ_NFC),true)
 PRODUCT_SOONG_NAMESPACES += hardware/nxp
